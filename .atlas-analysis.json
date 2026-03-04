@@ -1,0 +1,157 @@
+{
+  "projectType": "sdk-library",
+  "projectName": "Load Env",
+  "projectDescription": "A standalone implementation of Vite's loadEnv with type-safe environment variable parsing and Docker secrets support",
+  "theme": "mint",
+  "primaryColor": "#7c7c7b",
+  "lightColor": "#0b0b0b",
+  "darkColor": "#b9b9b9",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "installation",
+              "quickstart"
+            ]
+          },
+          {
+            "group": "Core Concepts",
+            "pages": [
+              "concepts/how-it-works",
+              "concepts/environment-files",
+              "concepts/type-safety",
+              "concepts/secrets"
+            ]
+          },
+          {
+            "group": "Examples",
+            "pages": [
+              "examples/basic-usage",
+              "examples/docker-secrets",
+              "examples/type-examples",
+              "examples/fallback-values"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "Core",
+            "pages": [
+              "api/load-env"
+            ]
+          },
+          {
+            "group": "Environment Variables",
+            "pages": [
+              "api/env-string",
+              "api/env-int",
+              "api/env-float",
+              "api/env-bool",
+              "api/env-date",
+              "api/env-url",
+              "api/env-uuid",
+              "api/env-enum",
+              "api/env-strings"
+            ]
+          },
+          {
+            "group": "Optional Environment Variables",
+            "pages": [
+              "api/maybe-env-string",
+              "api/maybe-env-int",
+              "api/maybe-env-float",
+              "api/maybe-env-bool",
+              "api/maybe-env-date",
+              "api/maybe-env-url",
+              "api/maybe-env-uuid",
+              "api/maybe-env-enum",
+              "api/maybe-env-strings"
+            ]
+          },
+          {
+            "group": "Secrets",
+            "pages": [
+              "api/secret-string",
+              "api/secret-int",
+              "api/secret-float",
+              "api/secret-bool",
+              "api/secret-date",
+              "api/secret-url",
+              "api/secret-uuid",
+              "api/secret-enum",
+              "api/secret-strings"
+            ]
+          },
+          {
+            "group": "Optional Secrets",
+            "pages": [
+              "api/maybe-secret-string",
+              "api/maybe-secret-int",
+              "api/maybe-secret-float",
+              "api/maybe-secret-bool",
+              "api/maybe-secret-date",
+              "api/maybe-secret-url",
+              "api/maybe-secret-uuid",
+              "api/maybe-secret-enum",
+              "api/maybe-secret-strings"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Vite-style environment variable loading with NODE_ENV support",
+    "Type-safe parsing for multiple data types (string, int, float, bool, date, URL, UUID, enum, arrays)",
+    "Optional and required environment variable variants",
+    "Docker secrets support from filesystem",
+    "Fallback/default value support for all functions"
+  ],
+  "publicApiSurface": [
+    "loadEnv(options?: LoadEnvOptions): Promise<LoadedEnv>",
+    "envString(key: string, fallback?: string): string",
+    "envInt(key: string, fallback?: number): number",
+    "envFloat(key: string, fallback?: number): number",
+    "envBool(key: string, fallback?: boolean): boolean",
+    "envDate(key: string, fallback?: Date): Date",
+    "envUrl(key: string, fallback?: URL): URL",
+    "envUuid(key: string, fallback?: UUID): UUID",
+    "envEnum<T>(key: string, values: T[], fallback?: T[number]): T[number]",
+    "envStrings(key: string, fallback?: string[]): string[]",
+    "maybeEnvString(key: string): string | undefined",
+    "maybeEnvInt(key: string): number | undefined",
+    "maybeEnvFloat(key: string): number | undefined",
+    "maybeEnvBool(key: string): boolean | undefined",
+    "maybeEnvDate(key: string): Date | undefined",
+    "maybeEnvUrl(key: string): URL | undefined",
+    "maybeEnvUuid(key: string): UUID | undefined",
+    "maybeEnvEnum<T>(key: string, values: T[]): T[number] | undefined",
+    "maybeEnvStrings(key: string): string[] | undefined",
+    "secretString(key: string, fallback?: string): Promise<string>",
+    "secretInt(key: string, fallback?: number): Promise<number>",
+    "secretFloat(key: string, fallback?: number): Promise<number>",
+    "secretBool(key: string, fallback?: boolean): Promise<boolean>",
+    "secretDate(key: string, fallback?: Date): Promise<Date>",
+    "secretUrl(key: string, fallback?: URL): Promise<URL>",
+    "secretUuid(key: string, fallback?: UUID): Promise<UUID>",
+    "secretEnum<T>(key: string, values: T[], fallback?: T[number]): Promise<T[number]>",
+    "secretStrings(key: string, fallback?: string[]): Promise<string[]>",
+    "maybeSecretString(key: string): Promise<string | undefined>",
+    "maybeSecretInt(key: string): Promise<number | undefined>",
+    "maybeSecretFloat(key: string): Promise<number | undefined>",
+    "maybeSecretBool(key: string): Promise<boolean | undefined>",
+    "maybeSecretDate(key: string): Promise<Date | undefined>",
+    "maybeSecretUrl(key: string): Promise<URL | undefined>",
+    "maybeSecretUuid(key: string): Promise<UUID | undefined>",
+    "maybeSecretEnum<T>(key: string, values: T[]): Promise<T[number] | undefined>",
+    "maybeSecretStrings(key: string): Promise<string[] | undefined>"
+  ]
+}
